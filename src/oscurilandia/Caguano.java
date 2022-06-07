@@ -1,38 +1,54 @@
 package oscurilandia;
 
-//import java.util.Date;
+import java.time.LocalDate;
 
 /*
  *SubClase Caguano
  *Cantidad de objetos:		5
- *Dimensión en tablero:		2 celdas concecutivas.
+ *Dimensión en tablero:		2 celdas consecutivas.
  *Disposición en tablero:	Horizontal fijo.
- *Ubicacion en tablero:		aleatoria.
- *Simbolo en tablero:		C
+ *Ubicación en tablero:		aleatoria.
+ *Símbolo en tablero:		C
  * 
  */
 
+// Clase que extiende clase Carro (clase hija de clase Carro).
+
 public class Caguano extends Carro {
-	private int 	alcanceTiro;
-	private String	colorConfeti;
-	
-	//Constructor(es).
+
+	private int alcanceTiro;
+	private String colorConfeti;
+
+	// Constructor(es).
+
+	// Constructor que recibe como parámetros los atributos fila y columna de la
+	// clase padre.
+
 	public Caguano(int fila, int columna) {
+
 		super(fila, columna);
 	}
 
-//	public Caguano(int cantidadOcupantes, Date fechaIngreso, int fila, int columna) {
-//		super(cantidadOcupantes, fechaIngreso, fila, columna);
-//	}
+	// Constructor que recibe como parámetros la totalidad de atributos de la clase
+	// padre.
 
-//	public Caguano(int cantidadOcupantes, Date fechaIngreso, int fila, int columna, int alcanceTiro,
-//			String colorConfeti) {
-//		super(cantidadOcupantes, fechaIngreso, fila, columna);
-//		this.alcanceTiro = alcanceTiro;
-//		this.colorConfeti = colorConfeti;
-//	}
-	
-	//Métodos setters, getters.
+	public Caguano(int cantidadOcupantes, LocalDate fechaIngreso, int fila, int columna) {
+		super(cantidadOcupantes, fechaIngreso, fila, columna);
+	}
+
+	// Constructor que recibe como parámetros la totalidad de atributos tanto de la
+	// clase padre como la hija.
+
+	public Caguano(int cantidadOcupantes, LocalDate fechaIngreso, int fila, int columna, int alcanceTiro,
+			String colorConfeti) {
+
+		super(cantidadOcupantes, fechaIngreso, fila, columna);
+		this.alcanceTiro = alcanceTiro;
+		this.colorConfeti = colorConfeti;
+	}
+
+	// Métodos setters, getters.
+
 	public int getAlcanceTiro() {
 		return this.alcanceTiro;
 	}
@@ -49,14 +65,7 @@ public class Caguano extends Carro {
 		this.colorConfeti = colorConfeti;
 	}
 
-	//Método toString.
-//	@Override
-//	public String toString() {
-//		return "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfeti=" + colorConfeti + ", getCantidadOcupantes()="
-//				+ getCantidadOcupantes() + ", getFechaIngreso()=" + getFechaIngreso() + ", getCoordX()=" + getCoordX()
-//				+ ", getCoordY()=" + getCoordY() + "]";
-//	}
-	
+	// Método toString sobreescrito apropiado de acuerdo a la lógica del juego.
 	@Override
 	public String toString() {
 		return "Fila = " + getFila() + " , Columna = " + getColumna();

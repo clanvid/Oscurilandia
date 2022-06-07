@@ -7,8 +7,8 @@ package oscurilandia;
  *Cantidad de objetos:		10
  *Dimensión en tablero:		1 celdas concecutivas.
  *Disposición en tablero:	-
- *Ubicacion en tablero:		aleatoria.
- *Simbolo en tablero:		T
+ *Ubicación en tablero:		aleatoria.
+ *Símbolo en tablero:		T
  * 
  */
 
@@ -34,6 +34,7 @@ public class Trupalla extends Carro {
 //	}
 
 	//Métodos setters, getters.
+	
 	public String getNombreConductor() {
 		return this.nombreConductor;
 	}

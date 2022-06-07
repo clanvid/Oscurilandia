@@ -1,37 +1,47 @@
 package oscurilandia;
 
-//import java.util.Date;
+
+import java.time.LocalDate;
+
 
 /*
  *SubClase Kromi
  *Cantidad de objetos:		3
- *Dimensión en tablero:		3 celdas concecutivas.
+ *Dimensión en tablero:		3 celdas consecutivas.
  *Disposición en tablero:	Vertical fijo.
- *Ubicacion en tablero:		aleatoria.
- *Simbolo en tablero:		K 
+ *Ubicación en tablero:		aleatoria.
+ *Símbolo en tablero:		K 
  * 
  */
 
+// Clase que extiende de Carro (clase hija).
+
 public class Kromi extends Carro {
+	
+	// Atributos clase Kromi.
+	
 	private int		anioFabricacion;
 	private String	marca;
 
 	//-- Constructor(es). ------------------------------------------------------
-//	public Kromi(int coordX, int coordY) {
-//		super(coordX, coordY);
-//	}
 	
+	// Constructor que recibe como parámetros los atributos fila y columna.
+
 	public Kromi(int fila, int columna) {
+		
 		super(fila, columna);
 	}
 
-//	public Kromi(int cantidadOcupantes, Date fechaIngreso, int coordX, int coordY, int anioFabricacion, String marca) {
-//		super(cantidadOcupantes, fechaIngreso, coordX, coordY);
-//		this.anioFabricacion = anioFabricacion;
-//		this.marca = marca;
-//	}
+	// Constructor que recibe como parámetros los atributos del padre y los propios.
 	
-	//-- Setters y Getters. ----------------------------------------------------
+    public Kromi(int cantidadOcupantes, LocalDate fechaIngreso, int fila, int columna, int anioFabricacion, String marca) {
+		super(cantidadOcupantes, fechaIngreso, fila, columna);
+ 	    this.anioFabricacion = anioFabricacion;
+	    this.marca = marca;
+     }
+	
+	//-- Métodos setters y getters. ----------------------------------------------------
+    
 	public int getAnioFabricacion() {
 		return this.anioFabricacion;
 	}
@@ -49,14 +59,11 @@ public class Kromi extends Carro {
 	}
 
 
-	
-	//-- toString. -------------------------------------------------------------
-//	@Override
-//	public String toString() {
-//		return "Kromi [anioFabricacion=" + anioFabricacion + ", marca=" + marca + ", getCantidadOcupantes()="
-//				+ getCantidadOcupantes() + ", getFechaIngreso()=" + getFechaIngreso() + ", getCoordX()=" + getCoordX()
-//				+ ", getCoordY()=" + getCoordY() + "]";
-//	}
+	// 
+	/*
+	 * Se sobreescribe el método toString de esta manera ya que se utilizará el constructor que utiliza como
+	 * parámetros los atributos del padre.
+	 */
 	
 	@Override
 	public String toString() {

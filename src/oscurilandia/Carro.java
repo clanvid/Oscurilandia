@@ -1,42 +1,61 @@
 package oscurilandia;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 //Definiendo Clase padre (SuperClase) Carro.
+
 public abstract class Carro {
-	private int		cantidadOcupantes;
-	private Date	fechaIngreso;
-	private int		fila;
-	private int		columna;
+
+	// Atributos de la clase Carro.
+
+	private int cantidadOcupantes;
+	private LocalDate fechaIngreso;
+	private int fila;
+	private int columna;
 	
-	public void mostrarDatos() {
-		
+	
+	// Métodos que se requerían según el enunciado.
+
+	public void mostrarDatosCarro() {
+		System.out.println("Cantidad de ocupantes : "+ this.cantidadOcupantes + " ; " +
+	    " fecha de ingreso : " + this.fechaIngreso + " ; " + "coordenada X : " + this.columna +
+	    "coordenada Y  : " + this.fila);
+
 	}
 
-	public void mostrarCoordenadas() {
+	public void mostrarCoordenadasEnTablero() {
 		
+		System.out.println("El carro tiene como coordenadas " + this.columna + " en el eje x  y " 
+		+ this.fila + " en el eje y.");
+
 	}
 
-	//Constructor(es).
+	// Constructor(es).
+	// Constructor vacío
+
 	public Carro() {
 		super();
 	}
 
+	// Constructor que recibe como parámetros atributos fila y columna.
+
 	public Carro(int fila, int columna) {
-		//super();
+		// super();
 		this.fila = fila;
 		this.columna = columna;
 	}
 
-	public Carro(int cantidadOcupantes, Date fechaIngreso, int fila, int columna) {
-		//super();
+	// Constructor que recibe como parámetros la totalidad de atributos.
+
+	public Carro(int cantidadOcupantes, LocalDate fechaIngreso, int fila, int columna) {
+		// super();
 		this.cantidadOcupantes = cantidadOcupantes;
 		this.fechaIngreso = fechaIngreso;
 		this.fila = fila;
 		this.columna = columna;
 	}
 
-	//Métodos setters, getters.
+	// Métodos setters, getters.
 	public int getCantidadOcupantes() {
 		return this.cantidadOcupantes;
 	}
@@ -45,11 +64,11 @@ public abstract class Carro {
 		this.cantidadOcupantes = cantidadOcupantes;
 	}
 
-	public Date getFechaIngreso() {
+	public LocalDate getFechaIngreso() {
 		return this.fechaIngreso;
 	}
 
-	public void setFechaIngreso(Date fechaIngreso) {
+	public void setFechaIngreso( LocalDate fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
 
@@ -69,12 +88,12 @@ public abstract class Carro {
 		this.columna = columna;
 	}
 
-	//Método toString.
+	// Método toString sobreescrito.
+
 	@Override
 	public String toString() {
-		return "Carro [cantidadOcupantes=" + cantidadOcupantes + 
-				", fechaIngreso=" + fechaIngreso + 
-				", fila=" + fila + ", columna=" + columna + "]";
+		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", fila=" + fila
+				+ ", columna=" + columna + "]";
 	}
-	
+
 }
