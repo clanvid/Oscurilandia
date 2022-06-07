@@ -5,37 +5,38 @@ package oscurilandia;
  */
 
 public class Huevo {
-	private int filProyectil;
-	private int colProyectil;
+
+	// Atributos de la clase Huevo.
+
+	private int filaProyectil;
+	private int columnaProyectil;
 	private int puntaje;
-	
-	//Constructor(es).
-//	public Huevo() {
-//		super();
-//	}
-	
-	public Huevo(int filProyectil, int colProyectil, int puntaje) {
-		//super();
-		this.filProyectil = filProyectil;
-		this.colProyectil = colProyectil;
+
+	// Constructor que recibe parámetros los atributos correspondientes.
+
+	public Huevo(int filaProyectil, int columnaProyectil, int puntaje) {
+		// super();
+		this.filaProyectil = filaProyectil;
+		this.columnaProyectil = columnaProyectil;
 		this.puntaje = puntaje;
-	}	
-	
-	//Métodos setters, getters.
-	public int getFilProyectil() {
-		return this.filProyectil;
 	}
 
-	public void setFilProyectil(int filProyectil) {
-		this.filProyectil = filProyectil;
+	// Métodos setters, getters.
+
+	public int getFilaProyectil() {
+		return this.filaProyectil;
 	}
 
-	public int getColProyectil() {
-		return this.colProyectil;
+	public void setFilProyectil(int filaProyectil) {
+		this.filaProyectil = filaProyectil;
 	}
 
-	public void setColProyectil(int colProyectil) {
-		this.colProyectil = colProyectil;
+	public int getColumnaProyectil() {
+		return this.columnaProyectil;
+	}
+
+	public void setColProyectil(int columnaProyectil) {
+		this.columnaProyectil = columnaProyectil;
 	}
 
 	public int getPuntaje() {
@@ -46,14 +47,12 @@ public class Huevo {
 		this.puntaje = puntaje;
 	}
 
-	//Método toString.
+	// Método toString sobreescrito.
+
 	@Override
 	public String toString() {
-		return "Huevo [ Número de Fila del Proyectil = " + filProyectil + 
-				", Número de Columna del Proyectil = " + colProyectil + 
-				", Puntaje = " + puntaje + " ]";
+		return "Huevo [ Número de Fila del Proyectil = " + filaProyectil + ", Número de Columna del Proyectil = "
+				+ columnaProyectil + ", Puntaje = " + puntaje + " ]";
 	}
-	
-	
 
 }
